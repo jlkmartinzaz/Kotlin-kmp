@@ -1,35 +1,127 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# Kotlin KMP API con XAMPP
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+Este proyecto tiene como objetivo crear una **API utilizando Kotlin Multiplatform (KMP)** y consumirla o integrarla en un entorno local usando **XAMPP**.
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+## 🧩 Descripción
 
-### Build and Run Android Application
+La idea principal es:
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+* Desarrollar la lógica compartida con **Kotlin Multiplatform**
+* Exponer funcionalidades como una **API**
+* Utilizar **XAMPP (Apache + PHP)** como entorno local para pruebas o integración
 
-### Build and Run iOS Application
-
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+> ⚠️ Nota: Kotlin KMP no depende de XAMPP directamente. XAMPP se usa como entorno de servidor local para simular consumo o integración.
 
 ---
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+## 🏗️ Tecnologías utilizadas
+
+* Kotlin Multiplatform (KMP)
+* Kotlin/JVM (backend o lógica)
+* XAMPP (Apache, PHP)
+* HTTP / REST API
+
+---
+
+## 🚀 ¿Qué hace este proyecto?
+
+* Define lógica compartida en Kotlin
+* Expone endpoints (API)
+* Permite consumir la API desde un entorno local (XAMPP)
+
+---
+
+## ⚙️ Estructura del proyecto
+
+```bash
+.
+├── shared/          # Código compartido KMP
+├── backend/         # Lógica de servidor (si aplica)
+├── xampp/           # Archivos para pruebas con Apache/PHP
+└── README.md
+```
+
+---
+
+## 🔧 Requisitos
+
+* JDK 11 o superior
+* Android Studio o IntelliJ IDEA
+* XAMPP instalado
+* Git
+
+---
+
+## ▶️ Cómo ejecutar
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/jlkmartinzaz/Kotlin-kmp.git
+cd Kotlin-kmp
+```
+
+---
+
+### 2. Ejecutar el backend (Kotlin)
+
+Dependiendo de tu configuración:
+
+```bash
+./gradlew run
+```
+
+o desde IntelliJ/Android Studio.
+
+---
+
+### 3. Iniciar XAMPP
+
+* Abre XAMPP
+* Inicia **Apache**
+* Coloca los archivos en la carpeta:
+
+```bash
+htdocs/
+```
+
+---
+
+### 4. Consumir la API
+
+Puedes usar:
+
+* navegador
+* Postman
+* o scripts en PHP dentro de XAMPP
+
+Ejemplo:
+
+```bash
+http://localhost/api/endpoint
+```
+
+---
+
+## 📌 Notas importantes
+
+* KMP se usa para compartir lógica, no para reemplazar el servidor web
+* XAMPP actúa como entorno local de pruebas
+* Puedes sustituir XAMPP por cualquier cliente HTTP
+
+---
+
+## 🧠 Futuras mejoras
+
+* Integrar Ktor como servidor oficial
+* Dockerizar el entorno
+* Añadir autenticación
+* Documentar endpoints con Swagger
+
+---
+
+## 👨‍💻 Autor
+
+* GitHub: https://github.com/jlkmartinzaz
+
+---
